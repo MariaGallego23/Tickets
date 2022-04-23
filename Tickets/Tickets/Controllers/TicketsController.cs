@@ -1,15 +1,9 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ConcertTickets.Data;
+﻿using ConcertTickets.Data;
 using ConcertTickets.Data.Entities;
 using ConcertTickets.Helpers;
 using ConcertTickets.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConcertTickets.Controllers
 {
