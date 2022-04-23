@@ -1,4 +1,4 @@
-﻿@model Tickets.Models.TicketViewModel
+﻿@model ConcertTickets.Models.TicketViewModel
 
 @{
     ViewData["Title"] = "Asignar boleta";
@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label asp-for="EntranceId" class="control-label"></label>
                 <select asp-for="EntranceId" asp-items="Model.Entrances" class="form-control"></select>
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <span asp-validation-for="EntranceId" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Tickets.Data.Entities
+namespace ConcertTickets.Data.Entities
 {
     public class Entrance
     {

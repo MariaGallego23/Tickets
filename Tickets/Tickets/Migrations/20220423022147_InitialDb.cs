@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Tickets.Migrations
+namespace ConcertTickets.Migrations
 {
     public partial class InitialDb : Migration
     {

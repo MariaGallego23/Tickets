@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Tickets.Data;
-using Tickets.Helpers;
+using ConcertTickets.Data;
+using ConcertTickets.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 

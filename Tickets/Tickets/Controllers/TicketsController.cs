@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Tickets.Data;
-using Tickets.Data.Entities;
-using Tickets.Helpers;
-using Tickets.Models;
+using ConcertTickets.Data;
+using ConcertTickets.Data.Entities;
+using ConcertTickets.Helpers;
+using ConcertTickets.Models;
 
-namespace Tickets.Controllers
+namespace ConcertTickets.Controllers
 {
     public class TicketsController : Controller
     {
@@ -61,7 +61,7 @@ namespace Tickets.Controllers
             TicketViewModel model = new()
             {
                 Id = id,
-                Entrances = await _combosHelper.GetComboEntranceAsync()
+                Entrances = await _combosHelper.GetComboEntrancesAsync()
             };
             return View(model);
         }
@@ -91,7 +91,9 @@ namespace Tickets.Controllers
 
         public async Task<IActionResult> Details(int Id)
         {
-            Ticket ticket = await _context.Tickets.FindAsync(Id);
+            Ticket ticket = await _context.Tickets
+                .Include(t => t.Entrance)
+                .FirstOrDefaultAsync(t => t.Id == Id);
             return View(ticket);
         }
 

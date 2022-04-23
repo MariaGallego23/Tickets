@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Tickets.Helpers
+namespace ConcertTickets.Helpers
 {
     public interface ICombosHelper
     {
-        Task<IEnumerable<SelectListItem>> GetComboEntranceAsync();
+        Task<IEnumerable<SelectListItem>> GetComboEntrancesAsync();
     }
 }

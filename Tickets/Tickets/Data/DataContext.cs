@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Tickets.Data.Entities;
+using ConcertTickets.Data.Entities;
 
-namespace Tickets.Data
+namespace ConcertTickets.Data
 {
     public class DataContext : DbContext
     {

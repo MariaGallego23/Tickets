@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Tickets.Models;
+using ConcertTickets.Models;
 
-namespace Tickets.Controllers
+namespace ConcertTickets.Controllers
 {
     public class HomeController : Controller
     {

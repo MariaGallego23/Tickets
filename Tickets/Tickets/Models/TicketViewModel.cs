@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
-namespace Tickets.Models
+namespace ConcertTickets.Models
 {
     public class TicketViewModel
     {

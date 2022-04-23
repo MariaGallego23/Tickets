@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tickets.Data;
+using ConcertTickets.Data;
 
 #nullable disable
 
-namespace Tickets.Migrations
+namespace ConcertTickets.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20220423022147_InitialDb")]

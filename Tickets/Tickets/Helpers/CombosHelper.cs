@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Tickets.Data;
+using ConcertTickets.Data;
 
-namespace Tickets.Helpers
+namespace ConcertTickets.Helpers
 {
     public class CombosHelper : ICombosHelper
 
@@ -13,19 +13,24 @@ namespace Tickets.Helpers
         {
             _context = context;
         }
-        public async Task<IEnumerable<SelectListItem>> GetComboEntranceAsync()
+        public async Task<IEnumerable<SelectListItem>> GetComboEntrancesAsync()
         {
-            List<SelectListItem> List = await _context.Entrances.Select(e => new SelectListItem
+            List<SelectListItem> list = await _context.Entrances
+                .Select(e => new SelectListItem
+                {
+                    Text = e.Description,
+                    Value = e.Id.ToString()
+                })
+                .OrderBy(e => e.Text)
+                .ToListAsync();
+
+            list.Insert(0, new SelectListItem
             {
-                Text = e.Description,
-                Value = e.Id.ToString()
-            })
-                     .OrderBy(e => e.Text)
-                     .ToListAsync();
+                Text = "Selecciona una entrada",
+                Value = "0"
+            });
 
-            List.Insert(0, new SelectListItem { Text = "[Seleccione una entrada...]", Value = "0" });
-
-            return List;
+            return list;
         }
     }
 }
